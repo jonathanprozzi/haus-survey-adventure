@@ -14,7 +14,7 @@ const SiteLayout = ({ children, minHeight = "100vh" }: SiteLayoutProps) => {
       minHeight={minHeight ? minHeight : "100vh"}
       minWidth='100vw'
       position='relative'
-      background='black'
+      background='gray.800'
     >
       {/* <Navbar />   can add Navbar if you have one */}
       <Flex

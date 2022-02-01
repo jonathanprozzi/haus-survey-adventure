@@ -14,7 +14,7 @@ export default function Home() {
             router.push("/questions/[id]", `/questions/1`);
           }}
         >
-          Start My Adventure 📜
+          I am on page {router.query.id}
         </Button>
       </VStack>
     </Box>
