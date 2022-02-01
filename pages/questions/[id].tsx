@@ -1,23 +1,27 @@
 import { Box, Heading, Text, Button, VStack } from "@chakra-ui/react";
 import { useRouter } from "next/router";
+import ResponseButtons from "../../components/ResponseButtons";
 
-const QuestionPage = ({ questionId, questionCopy }) => {
+interface Question {
+  questionId: number;
+  questionCopy: string;
+}
+
+const QuestionPage = ({ questionId, questionCopy }: Question) => {
   console.log("questionId: ", questionId);
   console.log("questionCopy: ", questionCopy);
   const router = useRouter();
   return (
     <Box>
       <VStack spacing={4}>
-        <Heading>CYOA Onboarding Adventure</Heading>
-        <Text>Welcome to the DAOhaus Onboarding Adventure</Text>
-        <Button
-          colorScheme='purple'
-          onClick={() => {
-            router.push("/questions/[id]", `/questions/1`);
-          }}
-        >
-          I am on page {router.query.id}
-        </Button>
+        <Heading>Question {questionId}</Heading>
+        <Text>{questionCopy}</Text>
+        <ResponseButtons
+          onClickYes={() => console.log("yes")}
+          YesCopy='Yes!'
+          onClickNo={() => console.log("no")}
+          NoCopy='No!'
+        />
       </VStack>
     </Box>
   );
