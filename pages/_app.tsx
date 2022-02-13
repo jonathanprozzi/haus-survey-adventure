@@ -7,16 +7,16 @@ const MyApp = ({ Component, pageProps }) => {
   return (
     <ChakraProvider theme={theme}>
       <DefaultSeo
-        title='Site title'
-        description='Site description.'
+        title='DAOhaus Onboarding Adventure'
+        description='A branching onboarding adventure for DAOhaus.'
         canonical='https://site-url'
         openGraph={{
           type: "website",
           locale: "en_IE",
           url: "https://site-url",
-          site_name: "Site title",
-          title: "Site title",
-          description: "Site description.",
+          site_name: "DAOhaus Onboarding Adventure",
+          title: "DAOhaus Onboarding Adventure",
+          description: "A branching onboarding adventure for DAOhaus.",
           images: [
             {
               url: "/vercel.svg", //replcace with your OG image
