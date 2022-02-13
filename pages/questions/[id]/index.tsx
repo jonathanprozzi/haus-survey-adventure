@@ -63,6 +63,9 @@ const QuestionPage = ({ questionId, questionCopy }: Question) => {
           onClickOrigin={() => {
             router.push(branchingPaths[questionId].backToOrigin);
           }}
+          onClickRespawn={() => {
+            router.push("/");
+          }}
         />
       </VStack>
     </Box>

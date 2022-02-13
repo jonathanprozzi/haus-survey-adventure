@@ -1,4 +1,5 @@
 import { VStack, HStack, Button } from "@chakra-ui/react";
+import { Router } from "next/router";
 
 interface ResponseButtonsProps {
   onClickYes: () => void;
@@ -7,6 +8,7 @@ interface ResponseButtonsProps {
   NoCopy: string;
   onClickOrigin?: () => void;
   OriginCopy?: string;
+  onClickRespawn?: () => void;
 }
 
 const ResponseButtons = ({
@@ -16,6 +18,7 @@ const ResponseButtons = ({
   NoCopy,
   onClickOrigin,
   OriginCopy,
+  onClickRespawn,
 }: ResponseButtonsProps) => (
   <VStack align='flex-start'>
     <HStack width='100%'>
@@ -62,7 +65,7 @@ const ResponseButtons = ({
         colorScheme='orange'
         variant='outline'
         onClick={() => {
-          onClickOrigin();
+          onClickRespawn();
         }}
       >
         Respawn ⛺️
