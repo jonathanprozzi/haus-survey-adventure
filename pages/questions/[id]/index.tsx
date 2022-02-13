@@ -49,16 +49,20 @@ const QuestionPage = ({ questionId, questionCopy }: Question) => {
         <Heading>Question {questionId}</Heading>
         <Text>{questionCopy}</Text>
         <ResponseButtons
+          YesCopy='Yes!'
+          NoCopy='No!'
+          OriginCopy='Back'
           onClickYes={() => {
             sendResponse({ questionId, questionResponse: "Yes" });
             router.push(branchingPaths[questionId].yes);
           }}
-          YesCopy='Yes!'
           onClickNo={() => {
             sendResponse({ questionId, questionResponse: "No" });
             router.push(branchingPaths[questionId].no);
           }}
-          NoCopy='No!'
+          onClickOrigin={() => {
+            router.push(branchingPaths[questionId].backToOrigin);
+          }}
         />
       </VStack>
     </Box>

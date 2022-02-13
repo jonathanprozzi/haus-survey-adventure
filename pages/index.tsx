@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <Box>
       <VStack spacing={4}>
-        <Heading>CYOA Onboarding Adventure</Heading>
+        <Heading>🏰 DAOhaus Onboarding Adventure 🏰</Heading>
         <Text>Welcome to the DAOhaus Onboarding Adventure</Text>
         <Button
           colorScheme='purple'
