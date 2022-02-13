@@ -9,13 +9,13 @@ export const config = {
   },
 };
 
-const createJoinUs: NextApiHandler = async (req, res) => {
-  const questionId = req.body.questionId;
+const createResponse: NextApiHandler = async (req, res) => {
+  const questionCopy = req.body.questionCopy;
   const response = req.body.response;
 
   try {
     const airtableRecord = await surveyTable.create({
-      questionId: questionId,
+      questionCopy: questionCopy,
       response: response,
     });
 
@@ -31,4 +31,4 @@ const createJoinUs: NextApiHandler = async (req, res) => {
   }
 };
 
-export default createJoinUs;
+export default createResponse;

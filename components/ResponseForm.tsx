@@ -17,10 +17,10 @@ import { useForm } from "react-hook-form";
 
 interface ResponseFormProps {
   questionId: number;
-  questionCopy: string;
+  questionResponse: string;
 }
 
-const ResponseForm = ({ questionId, questionCopy }: ResponseFormProps) => {
+const ResponseForm = ({ questionId, questionResponse }: ResponseFormProps) => {
   const [isSending, setSending] = useState(false);
   const toast = useToast();
 
@@ -37,7 +37,7 @@ const ResponseForm = ({ questionId, questionCopy }: ResponseFormProps) => {
       method: "POST",
       body: JSON.stringify({
         questionId: values.questionId,
-        response: values.response,
+        response: values.questionResponse,
       }),
       headers: {
         "Content-type": "application/json",
