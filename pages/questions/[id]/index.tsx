@@ -1,6 +1,7 @@
 import { Box, Heading, Text, Button, VStack } from "@chakra-ui/react";
 import { useRouter } from "next/router";
-import ResponseButtons from "../../components/ResponseButtons";
+import ResponseButtons from "components/ResponseButtons";
+import { branchingPaths } from "../../../utils/branches";
 
 interface Question {
   questionId: number;
@@ -17,9 +18,13 @@ const QuestionPage = ({ questionId, questionCopy }: Question) => {
         <Heading>Question {questionId}</Heading>
         <Text>{questionCopy}</Text>
         <ResponseButtons
-          onClickYes={() => console.log("yes")}
+          onClickYes={() => {
+            router.push(branchingPaths[questionId].yes);
+          }}
           YesCopy='Yes!'
-          onClickNo={() => console.log("no")}
+          onClickNo={() => {
+            router.push(branchingPaths[questionId].no);
+          }}
           NoCopy='No!'
         />
       </VStack>
